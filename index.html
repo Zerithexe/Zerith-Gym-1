@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerith Gym | Evde Vücut Geliştirme & AI Koç</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-dumbbell glow-icon"></i> ZERITH <span>GYM</span>
+        </div>
+        <p class="tagline">Evde Ekipmansız Kas Yapma Platformu</p>
+    </header>
+
+    <main class="container">
+        
+        <!-- Hero & Form Section -->
+        <section id="quiz-section" class="card">
+            <h2><i class="fa-solid fa-robot"></i> AI Koç ile Planını Oluştur</h2>
+            <p class="subtitle">Ağırlığa ihtiyacın yok! Kendi vücut ağırlığınla maksimum kas kütlesi inşa et.</p>
+
+            <form id="workout-form">
+                <!-- Seviye -->
+                <div class="form-group">
+                    <label><i class="fa-solid fa-chart-line"></i> Mevcut Seviyeniz:</label>
+                    <div class="options-grid">
+                        <label class="option-card">
+                            <input type="radio" name="level" value="beginner" checked>
+                            <div class="card-content">
+                                <h3>Başlangıç</h3>
+                                <p>0 - 6 Ay tecrübe</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="level" value="intermediate">
+                            <div class="card-content">
+                                <h3>Orta Seviye</h3>
+                                <p>6 Ay - 2 Yıl tecrübe</p>
+                            </div>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="level" value="advanced">
+                            <div class="card-content">
+                                <h3>İleri Seviye</h3>
+                                <p>2+ Yıl düzenli spor</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Ana Hedef -->
+                <div class="form-group">
+                    <label><i class="fa-solid fa-bullseye"></i> Ana Hedefiniz:</label>
+                    <select id="goal" required>
+                        <option value="hypertrophy">Maksimum Kas Yapımı (Hipertrofi)</option>
+                        <option value="fat_loss">Yağ Yakımı & Kas Tanımlama</option>
+                        <option value="strength">Güç & Dayanıklılık Artırımı</option>
+                    </select>
+                </div>
+
+                <!-- Gün Sayısı -->
+                <div class="form-group">
+                    <label><i class="fa-regular fa-calendar-days"></i> Haftada Kaç Gün Çalışabilirsiniz?</label>
+                    <select id="days" required>
+                        <option value="3">Haftada 3 Gün (Tüm Vücut / Full Body)</option>
+                        <option value="4">Haftada 4 Gün (Üst / Alt Bölgesel)</option>
+                        <option value="5">Haftada 5 Gün (İtiş / Çekiş / Bacak)</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="generate-btn" class="btn-primary">
+                    <i class="fa-solid fa-bolt"></i> Yapay Zeka Planımı Hazırla
+                </button>
+            </form>
+        </section>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="card hidden">
+            <div class="spinner"></div>
+            <h3 id="loading-text">Yapay zeka koçumuz sizin için en iyi planı oluşturuyor...</h3>
+            <p class="loading-subtext">Kas grupları, dinlenme süreleri ve progresif yüklenme hesaplanıyor.</p>
+        </div>
+
+        <!-- Result Section -->
+        <section id="result-section" class="card hidden">
+            <div class="plan-header">
+                <h2><i class="fa-solid fa-fire"></i> Özel Zerith Gym Antrenman Planınız</h2>
+                <div id="plan-badge" class="badge"></div>
+            </div>
+
+            <div id="workout-plan-container" class="plan-grid">
+                <!-- Program Script Tarafından Dinamik Üretilecek -->
+            </div>
+
+            <div class="nutrition-box">
+                <h3><i class="fa-solid fa-apple-whole"></i> Evde Kas Yapımı İçin Beslenme Tüyoları</h3>
+                <ul id="nutrition-tips">
+                    <li> Kilogram başına 1.6 - 2.0 gram protein tüketin (Yumurta, lor peyniri, tavuk, baklagiller).</li>
+                    <li> Kas onarımı ve büyüme için günde en az 7-8 saat kaliteli uyuyun.</li>
+                    <li> Her harekette tükenişe 1-2 tekrar kala durun (RPE 8-9) ve her hafta tekrar sayısını artırmaya çalışın.</li>
+                </ul>
+            </div>
+
+            <button id="reset-btn" class="btn-secondary">
+                <i class="fa-solid fa-rotate-left"></i> Yeniden Plan Oluştur
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <strong>Zerith Gym</strong>. Kendi Vücudunun Hakimi Ol.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
